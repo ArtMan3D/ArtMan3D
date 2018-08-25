@@ -788,15 +788,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4733182507833044, guid: 907f3e8bffaf25845b6c18ab0eac1112, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.9560973
+      value: -5.74
       objectReference: {fileID: 0}
     - target: {fileID: 4733182507833044, guid: 907f3e8bffaf25845b6c18ab0eac1112, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.82
+      value: 1.94
       objectReference: {fileID: 0}
     - target: {fileID: 4733182507833044, guid: 907f3e8bffaf25845b6c18ab0eac1112, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.2554536
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 4733182507833044, guid: 907f3e8bffaf25845b6c18ab0eac1112, type: 2}
       propertyPath: m_LocalRotation.x
@@ -950,7 +950,7 @@ MonoBehaviour:
   showSpriteInspector: 0
   showEventInspector: 0
   showBehaviourInspector: 0
-  showAxesInspector: 0
+  showAxesInspector: 1
   showTouchEventInspector: 0
   showDownEventInspector: 0
   showPressEventInspector: 0
@@ -1080,11 +1080,11 @@ MonoBehaviour:
     axisThreshold: 0.5
     isLockinJump: 0
     axisState: 0
-    _directTransform: {fileID: 0}
+    _directTransform: {fileID: 873130173}
     directAction: 0
     axisInfluenced: 0
     actionOn: 1
-    directCharacterController: {fileID: 0}
+    directCharacterController: {fileID: 873130170}
     directRigidBody: {fileID: 0}
     gravity: 0
     currentGravity: 0
@@ -1162,7 +1162,7 @@ MonoBehaviour:
   thumb: {fileID: 425119512}
   joystickArea: 1
   userArea: {fileID: 0}
-  isTurnAndMove: 0
+  isTurnAndMove: 1
   tmSpeed: 10
   tmAdditionnalRotation: 0
   tmMoveCurve:

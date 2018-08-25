@@ -140,6 +140,7 @@
     <Compile Include="Assets\script\AnimationScript.cs" />
     <Compile Include="Assets\script\CameraFloor.cs" />
     <Compile Include="Assets\script\Main.cs" />
+    <Compile Include="Assets\script\StartMeniu.cs" />
     <None Include="Assets\EasyTouchBundle\EasyTouchControls\ReleaseNotes.txt" />
     <None Include="Assets\EasyTouchBundle\EasyTouchControls\Documentation\Version 2.0.txt" />
     <None Include="Assets\EasyTouchBundle\EasyTouch\_Documentation\How to migrate from EasyTouch 4.X.txt" />
