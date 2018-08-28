@@ -422,8 +422,9 @@ public class ETCJoystickInspector:Editor  {
 		j.tmAdditionnalRotation = EditorGUILayout.FloatField("Intial rotation",j.tmAdditionnalRotation);
 
 		j.tmLockInJump = EditorGUILayout.Toggle("Lock in jump",j.tmLockInJump);
+        j.tmLockRotate = EditorGUILayout.Toggle("Lock Rotate", j.tmLockRotate);
 
-		X.gravity = EditorGUILayout.FloatField("Gravity",X.gravity);
+        X.gravity = EditorGUILayout.FloatField("Gravity",X.gravity);
 		EditorGUI.indentLevel--;
 
 	}

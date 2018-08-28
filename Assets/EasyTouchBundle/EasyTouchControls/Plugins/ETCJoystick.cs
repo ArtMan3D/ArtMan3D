@@ -79,7 +79,9 @@ public class ETCJoystick : ETCBase,IPointerEnterHandler,IDragHandler, IBeginDrag
 	public float tmAdditionnalRotation = 0;
 	public AnimationCurve tmMoveCurve;
 	public bool tmLockInJump = false;
-	private Vector3 tmLastMove;
+    public bool tmLockRotate = false;
+
+    private Vector3 tmLastMove;
 
 	#endregion
 		
@@ -740,18 +742,24 @@ public class ETCJoystick : ETCBase,IPointerEnterHandler,IDragHandler, IBeginDrag
 
 
 	private void DoTurnAndMove(){
-
 		float angle =Mathf.Atan2( axisX.axisValue,axisY.axisValue ) * Mathf.Rad2Deg;
 		float speed = tmMoveCurve.Evaluate( new Vector2(axisX.axisValue,axisY.axisValue).magnitude) * tmSpeed;
 
 		if (axisX.directTransform != null){
-
-			axisX.directTransform.rotation = Quaternion.Euler(new Vector3(0,  angle + tmAdditionnalRotation,0));
+            if (!tmLockRotate)
+            {
+			    axisX.directTransform.rotation = Quaternion.Euler(new Vector3(0,  angle + tmAdditionnalRotation,0));
+            }
 
 			if (axisX.directCharacterController != null){
 				if (axisX.directCharacterController.isGrounded || !tmLockInJump){
-					Vector3 move = axisX.directCharacterController.transform.TransformDirection(Vector3.forward) *  speed;
-					axisX.directCharacterController.Move(move* Time.deltaTime);
+                    Vector3 move = axisX.directCharacterController.transform.TransformDirection(Vector3.forward) * speed;
+                    if (tmLockRotate)
+                    {
+                        move = axisX.directCharacterController.transform.TransformDirection(new Vector3(axisX.axisValue, 0, axisY.axisValue)) * speed;
+                    }
+
+                    axisX.directCharacterController.Move(move* Time.deltaTime);
 					tmLastMove = move;
 				}
 				else{
