@@ -1190,6 +1190,6 @@ MonoBehaviour:
     m_PostInfinity: 0
     m_RotationOrder: 4
   tmLockInJump: 0
-  tmLockRotate: 0
+  tmLockRotate: 1
   isNoReturnThumb: 0
   isNoOffsetThumb: 0
