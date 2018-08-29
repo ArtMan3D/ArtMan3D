@@ -388,7 +388,7 @@ public abstract class ETCBase : MonoBehaviour {
 
 		//if (cameraLookAtCC){
 			cameraTransform.position = cameraLookAt.position + localOffset;
-			cameraTransform.LookAt( cameraLookAt.position);
+			//cameraTransform.LookAt( cameraLookAt.position);
 		//}
 		//else{
 

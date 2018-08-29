@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4733182507833044}
   - component: {fileID: 212281934115526480}
   - component: {fileID: 95701332123885150}
+  - component: {fileID: 143174553529469992}
   m_Layer: 0
   m_Name: master
   m_TagString: Untagged
@@ -50,7 +51,7 @@ Animator:
   m_GameObject: {fileID: 1625075503508680}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1c82cc163431dd845b765fc3c5a0b198, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9f3e21abe361ba740ac887416e1f97e6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -59,6 +60,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!143 &143174553529469992
+CharacterController:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1625075503508680}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2.21
+  m_Radius: 1.105
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &212281934115526480
 SpriteRenderer:
   m_ObjectHideFlags: 1

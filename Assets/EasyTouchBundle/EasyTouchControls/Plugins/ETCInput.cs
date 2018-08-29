@@ -43,6 +43,7 @@ public class ETCInput : MonoBehaviour{
 
 	#region Control
 	public void RegisterControl(ETCBase ctrl){
+        Debug.LogWarning(" RegisterControl @@@@@@@@ ETCInput control : " + ctrl.name);
 
 		if (controls.ContainsKey( ctrl.name)){
 			Debug.LogWarning("ETCInput control : " + ctrl.name + " already exists");
@@ -186,7 +187,6 @@ public class ETCInput : MonoBehaviour{
 		}
 	}
 
-
 	public static void SetDPadAxesCount(string ctrlName, ETCBase.DPadAxis value){
 		if (ETCInput.instance.controls.TryGetValue( ctrlName, out control)){
 			control.dPadAxisCount = value;
@@ -205,6 +205,30 @@ public class ETCInput : MonoBehaviour{
 			return ETCBase.DPadAxis.Two_Axis;
 		}
 	}
+    public static void SetCameraTarget(string ctrlName, GameObject target)
+    {
+        if (ETCInput.instance.controls.TryGetValue(ctrlName, out control))
+        {
+            control.cameraLookAt = target.transform;
+        }
+        else
+        {
+            Debug.LogWarning("ETCInput : " + ctrlName + " doesn't exist");
+        }
+    }
+
+    public static void SetCameraTargetOffset(string ctrlName, Vector3 offset)
+    {
+        if (ETCInput.instance.controls.TryGetValue(ctrlName, out control))
+        {
+            control.followOffset = offset;
+        }
+        else
+        {
+            Debug.LogWarning("ETCInput : " + ctrlName + " doesn't exist");
+        }
+    }
+
 	#endregion
 
 	#region New 2.0
@@ -323,6 +347,19 @@ public class ETCInput : MonoBehaviour{
 	#endregion
 
 	#region Axes
+
+    public static void SetAxisDirectTransform(string axisName, GameObject target)
+    {
+        if (ETCInput.instance.axes.TryGetValue(axisName, out axis))
+        {
+            axis.directTransform = target.transform;
+        }
+        else
+        {
+            Debug.LogWarning("ETCInput : " + axisName + " doesn't exist");
+        }
+    }
+
 	public static void ResetAxis(string axisName ){
 		if (ETCInput.instance.axes.TryGetValue( axisName, out axis)){
 			axis.axisValue = 0;
@@ -950,6 +987,7 @@ public class ETCInput : MonoBehaviour{
 		}
 	}
 	#endregion
+
 
 	#region private Method
 	private void RegisterAxis(ETCAxis axis){

@@ -200,6 +200,7 @@ public class ETCJoystick : ETCBase,IPointerEnterHandler,IDragHandler, IBeginDrag
 
 		base.Start();
 
+
 		// Init Camera position
 		if (enableCamera && cameraMode == CameraMode.SmoothFollow){
 			if (cameraTransform && cameraLookAt){
@@ -211,7 +212,7 @@ public class ETCJoystick : ETCBase,IPointerEnterHandler,IDragHandler, IBeginDrag
 		if (enableCamera && cameraMode == CameraMode.Follow){
 			if (cameraTransform && cameraLookAt){
 				cameraTransform.position = cameraLookAt.position + followOffset;
-				cameraTransform.LookAt( cameraLookAt.position);
+				//cameraTransform.LookAt( cameraLookAt.position);
 			}
 		}
 	}
@@ -282,14 +283,14 @@ public class ETCJoystick : ETCBase,IPointerEnterHandler,IDragHandler, IBeginDrag
 
 	protected override void UpdateControlState (){
 	
-		if (_visible){
-			UpdateJoystick();
-		}
-		else{
-			if (joystickType == JoystickType.Dynamic){
-				OnUp( false);
-			}
-		}
+        //if (_visible){
+        //    UpdateJoystick();
+        //}
+        //else{
+        //    if (joystickType == JoystickType.Dynamic){
+        //        OnUp( false);
+        //    }
+        //}
 	}
 
 	#endregion
@@ -420,6 +421,18 @@ public class ETCJoystick : ETCBase,IPointerEnterHandler,IDragHandler, IBeginDrag
 	protected override void DoActionBeforeEndOfFrame (){
 		axisX.DoGravity();
 		axisY.DoGravity();
+
+        if (_visible)
+        {
+            UpdateJoystick();
+        }
+        else
+        {
+            if (joystickType == JoystickType.Dynamic)
+            {
+                OnUp(false);
+            }
+        }
 	}
 
 	private void UpdateJoystick(){
@@ -767,7 +780,12 @@ public class ETCJoystick : ETCBase,IPointerEnterHandler,IDragHandler, IBeginDrag
 				}
 			}
 			else{
-				axisX.directTransform.Translate(Vector3.forward *  speed * Time.deltaTime,Space.Self);
+                Vector3 move = axisX.directTransform.TransformDirection(Vector3.forward) * speed;
+                if (tmLockRotate)
+                {
+                    move = axisX.directTransform.TransformDirection(new Vector3(axisX.axisValue, 0, axisY.axisValue)) * speed;
+                }
+                axisX.directTransform.Translate(move * Time.deltaTime, Space.Self);
 			}
 		}
 
