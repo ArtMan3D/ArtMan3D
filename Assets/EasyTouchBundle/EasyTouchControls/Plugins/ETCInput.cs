@@ -43,8 +43,6 @@ public class ETCInput : MonoBehaviour{
 
 	#region Control
 	public void RegisterControl(ETCBase ctrl){
-        Debug.LogWarning(" RegisterControl @@@@@@@@ ETCInput control : " + ctrl.name);
-
 		if (controls.ContainsKey( ctrl.name)){
 			Debug.LogWarning("ETCInput control : " + ctrl.name + " already exists");
 		}
