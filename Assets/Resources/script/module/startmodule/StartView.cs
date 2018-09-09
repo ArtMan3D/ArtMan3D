@@ -23,9 +23,17 @@ public class StartView : MonoBehaviour
 
     public void OnStartGame(string sceneName)
     {
-
         gameObject.SetActive(false);
 
+        // to do ...
+        // 
+        
+        
+        ShowScene(sceneName);
+    }
+
+    void ShowScene(string sceneName)
+    {
         SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
         Object masterObj = Resources.Load("res/character/master/master");
         GameObject master = GameObject.Instantiate(masterObj) as GameObject;
@@ -41,10 +49,12 @@ public class StartView : MonoBehaviour
         ETCInput.SetAxisDirectTransform("Horizontal", master);
         ETCInput.SetAxisDirectTransform("Vertical", master);
 
-
+        Object cubeObj = Resources.Load("res/cube");
+        GameObject cube = GameObject.Instantiate(cubeObj) as GameObject;
+        cube.name = "cube";
+        // cube.transform.position = master.transform.position;
+        cube.transform.position = new Vector3(master.transform.position.x + 5, master.transform.position.y, master.transform.position.z);
         // CopyControl.Inst().OpenReproduceView();
-
-
     }
 
 }

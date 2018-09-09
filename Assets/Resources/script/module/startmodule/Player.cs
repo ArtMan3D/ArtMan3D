@@ -11,5 +11,6 @@ public class Player {
 		heroAnimator = hero.GetComponent<Animator>();
 		heroAnimator.CrossFade("idle", 0, -1, 0);
 		heroAnimator.speed = 0;
+		hero.GetComponent<CharacterController>().isTrigger = false;
 	}
 }

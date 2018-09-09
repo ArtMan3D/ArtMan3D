@@ -57,7 +57,7 @@ public class MoveControl : MonoBehaviour {
 			masterAnim.CrossFade("up", 0);	
 			direction = Direct.up;
 		}
-		Debug.Log("move" + delta);
+		// Debug.Log("move" + delta);
 
 	}
 
@@ -68,6 +68,6 @@ public class MoveControl : MonoBehaviour {
 		masterAnim.speed = 0;
 		direction = Direct.idle;
 
-		Debug.Log("move" + dir+ "," + (dir / 4.0f));
+		// Debug.Log("move" + dir+ "," + (dir / 4.0f));
 	}
 }

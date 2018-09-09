@@ -771,7 +771,7 @@ public class ETCJoystick : ETCBase,IPointerEnterHandler,IDragHandler, IBeginDrag
                     {
                         move = axisX.directCharacterController.transform.TransformDirection(new Vector3(axisX.axisValue, 0, axisY.axisValue)) * speed;
                     }
-
+                    move.y = -20;
                     axisX.directCharacterController.Move(move* Time.deltaTime);
 					tmLastMove = move;
 				}

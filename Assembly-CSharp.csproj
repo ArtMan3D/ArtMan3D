@@ -141,6 +141,7 @@
      <Compile Include="Assets\Resources\script\module\copymodule\view\CopyView.cs" />
      <Compile Include="Assets\Resources\script\module\copymodule\view\ReproduceView.cs" />
      <Compile Include="Assets\Resources\script\module\mainmodule\MoveControl.cs" />
+     <Compile Include="Assets\Resources\script\module\mainmodule\TriggerControl.cs" />
      <Compile Include="Assets\Resources\script\module\startmodule\Player.cs" />
      <Compile Include="Assets\Resources\script\module\startmodule\StartView.cs" />
      <None Include="Assets\EasyTouchBundle\EasyTouchControls\ReleaseNotes.txt" />
