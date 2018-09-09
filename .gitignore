@@ -35,3 +35,7 @@
 obj/
 Temp/
 Library/
+*.csproj
+Assembly-CSharp-Editor.csproj
+*.csproj
+Assembly-CSharp.csproj
