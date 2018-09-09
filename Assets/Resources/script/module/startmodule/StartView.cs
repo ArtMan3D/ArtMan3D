@@ -30,6 +30,8 @@ public class StartView : MonoBehaviour
         Object masterObj = Resources.Load("res/character/master/master");
         GameObject master = GameObject.Instantiate(masterObj) as GameObject;
         master.transform.position = new Vector3(0.4f, 0.92f, 3.56f);
+        Player.SetHero(master);
+        Player.heroAnimator.CrossFade("idle", 0.1f);
 
         GameObject cameraParent = GameObject.Find("CamParent");
         cameraParent.transform.position = new Vector3(0.38f, 19.2f, -18.18f);
@@ -40,7 +42,7 @@ public class StartView : MonoBehaviour
         ETCInput.SetAxisDirectTransform("Vertical", master);
 
 
-        CopyControl.Inst().OpenReproduceView();
+        // CopyControl.Inst().OpenReproduceView();
 
 
     }
