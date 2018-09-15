@@ -50,10 +50,10 @@ Debug.Log("1接触持续中"+ collision.gameObject.name + "obj:" + gameObject.na
     }
 
     void OnControllerColliderHit (ControllerColliderHit hit) { 
-      Debug.Log("RecieveMessage"+ hit.gameObject.name);
+      //Debug.Log("RecieveMessage"+ hit.gameObject.name);
       if (hit.gameObject.name == "cube")
       {
-      	hit.gameObject.active = false;
+      	hit.gameObject.SetActive(false);
       	CopyControl.Inst().OpenReproduceView();
       }
  }

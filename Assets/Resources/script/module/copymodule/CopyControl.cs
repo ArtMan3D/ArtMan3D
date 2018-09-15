@@ -13,11 +13,17 @@ public class CopyControl : Singleton<CopyControl>
         copyView = new CopyView();
 
         reproduceView = new ReproduceView();
+
     }
 
     public void OpenReproduceView()
     {
         reproduceView.Open();
+    }
+
+    public void OpenCopyView()
+    {
+        copyView.Open();
     }
 
 }

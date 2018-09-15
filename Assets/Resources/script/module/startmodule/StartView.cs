@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class StartView : MonoBehaviour
@@ -14,6 +13,8 @@ public class StartView : MonoBehaviour
         startBtn.onClick.AddListener(()=>{
             OnStartGame(sceneName);
         });
+
+        SceneControl.Inst().OnSceneExit += new SceneControl.SceneExiteDelegate(OnSceneExit);
 	}
 	
 	// Update is called once per frame
@@ -27,34 +28,14 @@ public class StartView : MonoBehaviour
 
         // to do ...
         // 
-        
-        
-        ShowScene(sceneName);
+
+        SceneControl.Inst().ChangeScene(sceneName);
+
+        CopyControl.Inst().OpenCopyView();
     }
 
-    void ShowScene(string sceneName)
+    public void OnSceneExit()
     {
-        SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
-        Object masterObj = Resources.Load("res/character/master/master");
-        GameObject master = GameObject.Instantiate(masterObj) as GameObject;
-        master.transform.position = new Vector3(0.4f, 0.92f, 3.56f);
-        Player.SetHero(master);
-        Player.heroAnimator.CrossFade("idle", 0.1f);
-
-        GameObject cameraParent = GameObject.Find("CamParent");
-        cameraParent.transform.position = new Vector3(0.38f, 19.2f, -18.18f);
-
-        ETCInput.SetCameraTargetOffset("JoystickView", cameraParent.transform.position - master.transform.position);
-        ETCInput.SetCameraTarget("JoystickView", master);
-        ETCInput.SetAxisDirectTransform("Horizontal", master);
-        ETCInput.SetAxisDirectTransform("Vertical", master);
-
-        Object cubeObj = Resources.Load("res/cube");
-        GameObject cube = GameObject.Instantiate(cubeObj) as GameObject;
-        cube.name = "cube";
-        // cube.transform.position = master.transform.position;
-        cube.transform.position = new Vector3(master.transform.position.x + 5, master.transform.position.y, master.transform.position.z);
-        // CopyControl.Inst().OpenReproduceView();
+        gameObject.SetActive(true);
     }
-
 }

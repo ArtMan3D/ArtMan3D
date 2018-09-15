@@ -17,7 +17,9 @@ public class ReproduceView
             Object obj = Resources.Load("res/ui/ReproduceView");
             view = GameObject.Instantiate(obj) as GameObject;
             view.transform.SetParent(Main.UILayerMiddle.transform);
-            view.transform.localPosition = Vector2.zero;
+            RectTransform rectCom = view.GetComponent<RectTransform>();
+            rectCom.offsetMax = Vector2.zero;
+            rectCom.offsetMin = Vector2.zero;
 
             List<GameObject> cutAreaImgList = new List<GameObject>();
             for(int i = 0; i < 3; i++)
