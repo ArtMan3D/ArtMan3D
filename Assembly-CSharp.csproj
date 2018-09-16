@@ -146,14 +146,15 @@
      <Compile Include="Assets\Resources\script\module\entitymodule\animation\AnimationRun.cs" />
      <Compile Include="Assets\Resources\script\module\entitymodule\animation\AnimationState.cs" />
      <Compile Include="Assets\Resources\script\module\entitymodule\control\JoyMoveControl.cs" />
+     <Compile Include="Assets\Resources\script\module\entitymodule\control\TriggerControl.cs" />
      <Compile Include="Assets\Resources\script\module\entitymodule\Entity.cs" />
      <Compile Include="Assets\Resources\script\module\entitymodule\Hero.cs" />
      <Compile Include="Assets\Resources\script\module\entitymodule\ObjectEn.cs" />
-     <Compile Include="Assets\Resources\script\module\mainmodule\TriggerControl.cs" />
      <Compile Include="Assets\Resources\script\module\scenemodule\SceneControl.cs" />
      <Compile Include="Assets\Resources\script\module\scenemodule\SceneIns.cs" />
      <Compile Include="Assets\Resources\script\module\startmodule\StartView.cs" />
      <Compile Include="Assets\Resources\script\module\storymodule\StoryView.cs" />
+     <None Include="Assets\shader\ui.shader" />
      <None Include="Assets\EasyTouchBundle\EasyTouchControls\ReleaseNotes.txt" />
      <None Include="Assets\EasyTouchBundle\EasyTouchControls\Documentation\Version 2.0.txt" />
      <None Include="Assets\EasyTouchBundle\EasyTouch\_Documentation\How to migrate from EasyTouch 4.X.txt" />

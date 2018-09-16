@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class ReproduceView
 {
-    private GameObject view = null;
+    public GameObject view = null;
     private Button closeBtn = null;
 
     public void Open()

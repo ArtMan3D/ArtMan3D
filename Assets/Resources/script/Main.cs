@@ -16,7 +16,9 @@ public class Main : MonoBehaviour {
         UILayerMiddle = CommonFunc.FindObjects("middlelayer")[0];
         UILayerTop = CommonFunc.FindObjects("toplayer")[0];
         JoystickCom = CommonFunc.FindObjects("JoystickView")[0].GetComponent<ETCJoystick>();
-        
+
+        CopyControl.Inst();
+        BagControl.Inst();
     }
 
     public static void SetHero(Hero he)

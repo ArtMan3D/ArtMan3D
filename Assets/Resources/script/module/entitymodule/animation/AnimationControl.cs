@@ -36,7 +36,7 @@ public class AnimationControl
 
     public void CrossFade(string stateName, float normalizedTransitionDuration, float normalizedTimeOffset = float.NegativeInfinity)
     {
-        Debug.Log("crossfade:" +  stateName + "speed:" + entityAnimator.speed);
+        //Debug.Log("crossfade:" +  stateName + "speed:" + entityAnimator.speed);
 
         entityAnimator.CrossFade(stateName, normalizedTransitionDuration, -1, normalizedTimeOffset);
     }

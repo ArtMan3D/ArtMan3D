@@ -30,8 +30,6 @@ public class StartView : MonoBehaviour
         // 
 
         SceneControl.Inst().ChangeScene(sceneName);
-
-        CopyControl.Inst().OpenCopyView();
     }
 
     public void OnSceneExit()

@@ -15,5 +15,7 @@ public class ObjectEn : Entity
             Main.Hero.GetGameObject().transform.position.y,
             Main.Hero.GetGameObject().transform.position.z
         );
+
+        gameObject.AddComponent<TriggerControl>();
     }
 }

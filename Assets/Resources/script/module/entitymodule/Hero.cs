@@ -13,6 +13,7 @@ public class Hero : Entity
     {
         InitEntityView("character/master/master");
         gameObject.transform.position = new Vector3(0.4f, 0.92f, 3.56f);
+        gameObject.AddComponent<TriggerControl>();
 
         Main.SetHero(this);
 
